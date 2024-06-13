@@ -7,21 +7,25 @@ public class Athlete implements Participant {
     private final String nomAthlete;
     private final String prenomAthlete;
     private final char sexeAthlete;
+    
     private int force;
     private int agilite;
     private int endurance;
+
+    private Pays paysAthlete;
 
     /**
      * Construit une instance de Pays avec le nom spécifié.
      * @param nomP le nom du pays
      */
-    public Athlete(String nomA, String prenomA, char sexeA, int force, int agilite, int endurance) {
+    public Athlete(String nomA, String prenomA, char sexeA, int force, int agilite, int endurance, Pays paysA) {
         this.nomAthlete = nomA;
         this.prenomAthlete = prenomA;
         this.sexeAthlete = sexeA;
         this.force = force;
         this.agilite = agilite;
         this.endurance = endurance;
+        this.paysAthlete = paysA;
     }
 
     /**
@@ -86,9 +90,26 @@ public class Athlete implements Participant {
         this.endurance = endurance;
     }
 
-    @Override
-    public int participer() {
-        // TODO Auto-generated method stub
-        return 0;
+    /**
+     * Retourne le pays de l'athlète.
+     * @return son pays.
+     */
+    public Pays getPaysAthlete() {
+        return this.paysAthlete;
     }
+
+    /**
+     * Modifie le pays de l'athlète.
+     */
+    public void setPaysAthlete(Pays paysAthlete) {
+        this.paysAthlete = paysAthlete;
+    }
+
+    @Override
+    public int participer(Epreuve epreuve) {
+        return 0;
+        //return Score.getScore(this.nomAthlete, epreuve);
+    }
+
+    
 }

@@ -8,7 +8,7 @@ public interface Participant {
      * Participe à un événement sportif.
      * @return un entier représentant le résultat de la participation
      */
-    public int participer();
+    public int participer(Epreuve epreuve);
 
     /**
      * Obtient le nom du participant.

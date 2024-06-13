@@ -9,5 +9,6 @@ public class HandBall extends Sport {
      */
     public HandBall() {
         super("HandBall");
+        this.nbMembresEquipe = 7;
     }
 }

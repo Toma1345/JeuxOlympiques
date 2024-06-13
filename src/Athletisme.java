@@ -13,6 +13,7 @@ public class Athletisme extends Sport {
     public Athletisme(int distance) {
         super("Athletisme");
         this.distance = distance;
+        this.nbMembresEquipe = 4;
     }
 
     /**

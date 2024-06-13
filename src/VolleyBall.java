@@ -9,5 +9,6 @@ public class VolleyBall extends Sport {
      */
     public VolleyBall() {
         super("VolleyBall");
+        this.nbMembresEquipe = 6;
     }
 }
