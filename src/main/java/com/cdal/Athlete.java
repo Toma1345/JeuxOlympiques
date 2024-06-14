@@ -153,6 +153,8 @@ public class Athlete implements Participant, Comparable<Athlete> {
         this.paysAthlete = paysAthlete;
     }
 
+    public Equipe getEquipe() {return this.equipe;}
+
     /**
      * Retourne un affichage indiquant le nombre de médailles de l'athlète
      * @return une phrase donnant le nb de médailles de l'athlète

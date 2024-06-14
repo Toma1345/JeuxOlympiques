@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Equipe implements Participant, Comparable<Equipe>{
     
-    private String nomEquipe;
+    private final String nomEquipe;
     private double score;
     private int nbOr = 0;
     private int nbArgent = 0;
