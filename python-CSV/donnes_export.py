@@ -53,15 +53,28 @@ for nom in epreuves :
 for i in range(40, 47):
     nom = random.choice(noms_fr)
     prenom = random.choice(prenoms_fr)
-    sexe = random.choice(sexes)
     force = random.randint(1, 20)
     endurance = random.randint(1, 20)
     agilite = random.randint(1, 20)
     epreuve = random.choice(epreuves)
     place = dict[epreuve]
     dict[epreuve] = place +1
-    print(f"Athlete athlete{i} = new Athlete(''{nom}'', ''{prenom}'', '{sexe}', {force}, {agilite}, {endurance}, france,  equipe1);")
+    print(f"Athlete athlete{i} = new Athlete(''{nom}'', ''{prenom}'', 'H', {force}, {agilite}, {endurance}, france,  equipe1);")
     print(f"handH.ajouterResultat(athlete{i}, new Score({random.randint(1,20)}, {place},  athlete{i}));")
     
 for i in range(1,47):
     print(f"jO.ajouterAthlete(athlete{i});")
+    
+for nom in epreuves :
+    dict[nom] = 1
+for i in range(34, 40):
+    nom = random.choice(noms_cn)
+    prenom = random.choice(prenoms_cn)
+    force = random.randint(1, 20)
+    endurance = random.randint(1, 20)
+    agilite = random.randint(1, 20)
+    epreuve = random.choice(epreuves)
+    place = dict[epreuve]
+    dict[epreuve] = place +1
+    print(f"Athlete athlete{i} = new Athlete(''{nom}'', ''{prenom}'', 'H', {force}, {agilite}, {endurance}, chine,  equipe2);")
+    print(f"volleyH.ajouterResultat(athlete{i}, new Score({random.randint(1,20)}, {place},  athlete{i}));")
