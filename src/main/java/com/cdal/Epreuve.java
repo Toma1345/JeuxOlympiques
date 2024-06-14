@@ -75,6 +75,11 @@ public class Epreuve {
     }
 
     @Override
-    public String toString(){}
+    public String toString(){
+        String res = "Nom de l'épreuve: "+ this.nomEpreuve + System.lineSeparator();
+        res += "Genre de l'épreuve: " + this.genre + System.lineSeparator();
+        res += "Sport :" + this.sport + System.lineSeparator();
+        for (Map.Entry<Participant, > entry : map.entrySet())
+    }
 
 }

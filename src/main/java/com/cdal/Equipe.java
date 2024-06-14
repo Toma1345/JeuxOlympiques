@@ -60,7 +60,7 @@ public class Equipe implements Participant{
     @Override
     public String toString(){
         String res = "Nom de l'équipe: "+this.nomEquipe + System.lineSeparator();
-        res += "Nationalité de l'équipe: "+this.lesMembres.get(0).getPaysAthlete();
+        res += "Nationalité de l'équipe: "+this.lesMembres.get(0).getPaysAthlete()+ System.lineSeparator();
         res += "Liste des athlètes: ";  
         for (Athlete athlete: this.lesMembres){
             res += athlete + ", ";
