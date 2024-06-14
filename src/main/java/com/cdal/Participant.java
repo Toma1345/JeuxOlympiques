@@ -15,6 +15,16 @@ public interface Participant {
 
     public void setPlacement(int place);
 
+    public void setScore(double score);
+
+    public double getScore();
+
+    public int getNbOr();
+
+    public int getNbArgent();
+
+    public int getNbBronze();
+
     /**
      * Obtient le nom du participant.
      * @return le nom du participant sous forme de chaîne de caractères

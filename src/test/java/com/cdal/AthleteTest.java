@@ -1,13 +1,12 @@
 package test.java.com.cdal;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import main.java.com.cdal.Athlete;
 import main.java.com.cdal.Pays;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import org.junit.jupiter.api.BeforeEach;
 
 public class AthleteTest {
 

@@ -1,9 +1,10 @@
 package main.java.com.cdal;
+
 /**
  * La classe Athlete représente un pays.
  * Elle possède un attribut qui est le nom du pays.
  */
-public class Athlete implements Participant {
+public class Athlete implements Participant, Comparable<Athlete> {
     
     private final String nomAthlete;
     private final String prenomAthlete;
@@ -15,6 +16,8 @@ public class Athlete implements Participant {
     private int nbOr = 0;
     private int nbArgent = 0;
     private int nbBronze = 0;
+
+    private double score;
 
     private Pays paysAthlete;
 
@@ -34,6 +37,18 @@ public class Athlete implements Participant {
         this.paysAthlete = paysA;
         this.equipe = equipe;
     }
+    @Override
+    public int getNbOr(){
+        return this.nbOr;
+    }
+    @Override
+    public int getNbArgent(){
+        return this.nbArgent;
+    }
+    @Override
+    public int getNbBronze(){
+        return this.nbBronze;
+    }
 
     /**
      * Retourne le nom et prénom de l'athlète.
@@ -44,6 +59,17 @@ public class Athlete implements Participant {
         return this.nomAthlete + " " + this.prenomAthlete;
     }
 
+    @Override
+    public double getScore(){
+        return this.score;
+    }
+
+    @Override
+    public void setScore(double score){
+        this.score += score;
+    }
+
+    @Override
     public void setPlacement(int place){
         if (place == 1) {
             this.nbOr++;
@@ -127,6 +153,14 @@ public class Athlete implements Participant {
         this.paysAthlete = paysAthlete;
     }
 
+    /**
+     * Retourne un affichage indiquant le nombre de médailles de l'athlète
+     * @return une phrase donnant le nb de médailles de l'athlète
+     */
+    public String getMedaillesAthlete() {
+        return this.obtenirNom() + " a : " + System.lineSeparator() + "- " + this.nbOr + " médaille(s) d'or" + System.lineSeparator() + "- " + this.nbArgent + " médaille(s) d'argent" + System.lineSeparator() + "- " + this.nbBronze + " médaille(s) de bronze" ;
+    }
+
     @Override
     public double participer(Epreuve epreuve) {
         Score unScore = epreuve.getScore(this);
@@ -142,6 +176,11 @@ public class Athlete implements Participant {
     @Override
     public String toString() {
         return obtenirNom();
+    }
+
+    @Override
+    public int compareTo(Athlete unAthlete) {
+        return Double.compare(this.score, unAthlete.score) * -1;
     }
 
     

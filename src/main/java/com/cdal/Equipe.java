@@ -2,9 +2,10 @@ package main.java.com.cdal;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Equipe implements Participant{
+public class Equipe implements Participant, Comparable<Equipe>{
     
     private String nomEquipe;
+    private double score;
     private int nbOr = 0;
     private int nbArgent = 0;
     private int nbBronze = 0;
@@ -23,6 +24,27 @@ public class Equipe implements Participant{
             this.lesMembres.add(athlete);
         }
         else {System.out.println("L'athlète qui a voulu être ajouté n'est pas du même pays que les autres athlètes de l'équipe !");}
+    }
+    @Override
+    public int getNbOr(){
+        return this.nbOr;
+    }
+    @Override
+    public int getNbArgent(){
+        return this.nbArgent;
+    }
+    @Override
+    public int getNbBronze(){
+        return this.nbBronze;
+    }
+    @Override
+    public double getScore(){
+        return this.score;
+    }
+
+    @Override
+    public void setScore(double score){
+        this.score += score;
     }
 
     @Override
@@ -66,5 +88,10 @@ public class Equipe implements Participant{
             res += athlete + ", ";
         }
         return res;
+    }
+
+    @Override
+    public int compareTo(Equipe uneEquipe) {
+        return Double.compare(this.score, uneEquipe.score) * -1;
     }
 }

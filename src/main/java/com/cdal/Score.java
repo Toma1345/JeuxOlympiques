@@ -11,6 +11,7 @@ public class Score {
         this.position = place;
         this.participant = participant;
         participant.setPlacement(place);
+        participant.setScore(this.score);
     }
 
     public double getScore() {
@@ -19,7 +20,5 @@ public class Score {
 
     public int getPlacement(){
         return this.position;
-    }
-
-    
+    }    
 }

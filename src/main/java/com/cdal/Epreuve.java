@@ -3,12 +3,14 @@ package main.java.com.cdal;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Epreuve {
+public class Epreuve implements Comparable<Epreuve> {
     
     private char genre;
     private String nomEpreuve;
 
     private Sport sport;
+
+    private double score;
 
     private Map<Participant, Score> equipeResultat;
 
@@ -44,6 +46,7 @@ public class Epreuve {
      */
     public void ajouterResultat(Participant participant, Score resultat) {
         this.equipeResultat.put(participant, resultat);
+        this.score += resultat.getScore();
     }
 
     /**
@@ -54,6 +57,7 @@ public class Epreuve {
      */
     public void modifierResultat(Participant participant, Score ancienScore, Score newRes) {
         this.equipeResultat.replace(participant, ancienScore, newRes);
+        this.score = this.score - ancienScore.getScore() + newRes.getScore();
     }
 
     /**
@@ -63,6 +67,7 @@ public class Epreuve {
      */
     public void retirerResultat(Participant participant, Score res) {
         this.equipeResultat.remove(participant, res);
+        this.score -= res.getScore();
     }
     
     /**
@@ -79,7 +84,16 @@ public class Epreuve {
         String res = "Nom de l'épreuve: "+ this.nomEpreuve + System.lineSeparator();
         res += "Genre de l'épreuve: " + this.genre + System.lineSeparator();
         res += "Sport :" + this.sport + System.lineSeparator();
-        for (Map.Entry<Participant, > entry : map.entrySet())
+        res += "Les scores de chaque participant: ";
+        for (Map.Entry<Participant, Score> kv : this.equipeResultat.entrySet()){
+            res += "("+kv.getKey()+", "+ kv.getValue()+")";
+        }
+        return res;
+    }
+    
+    @Override
+    public int compareTo(Epreuve uneEpreuve) {
+        return Double.compare(this.score, uneEpreuve.score) * -1;
     }
 
 }
