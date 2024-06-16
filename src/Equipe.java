@@ -65,6 +65,10 @@ public class Equipe implements Participant, Comparable<Equipe>{
         this.lesEpreuves.add(epreuve);
     }
 
+    public List<Athlete> getLesMembres(){
+        return this.lesMembres;
+    }
+
     @Override
     public String obtenirNom(){
         return this.nomEquipe;

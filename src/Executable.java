@@ -145,7 +145,7 @@ public class Executable {
         handH.ajouterResultat(athlete40, new Score(11, 1,  athlete40));
         equipe1.ajouteAthlete(athlete40);
         Athlete athlete41 = new Athlete("Durand", "Paul", 'M', 16, 11, 10, france,  equipe1);
-        handH.ajouterResultat(athlete41, new Score(16, 1,  athlete41));
+        handH.ajouterResultat(athlete41, new Score(16, 2,  athlete41));
         equipe1.ajouteAthlete(athlete41);
         Athlete athlete42 = new Athlete("Faure", "Mathis", 'M', 11, 17, 7, france,  equipe1);
         handH.ajouterResultat(athlete42, new Score(14, 1,  athlete42));
@@ -154,13 +154,13 @@ public class Executable {
         handH.ajouterResultat(athlete43, new Score(6, 1,  athlete43));
         equipe1.ajouteAthlete(athlete43);
         Athlete athlete44 = new Athlete("Morel", "Camille", 'M', 3, 11, 4, france,  equipe1);
-        handH.ajouterResultat(athlete44, new Score(10, 1,  athlete44));
+        handH.ajouterResultat(athlete44, new Score(10, 3,  athlete44));
         equipe1.ajouteAthlete(athlete44);
         Athlete athlete45 = new Athlete("Mercier", "Emma", 'M', 19, 19, 12, france,  equipe1);
         handH.ajouterResultat(athlete45, new Score(10, 1,  athlete45));
         equipe1.ajouteAthlete(athlete45);
         Athlete athlete46 = new Athlete("Thomas", "Juliette", 'M', 3, 10, 15, france,  equipe1);
-        handH.ajouterResultat(athlete46, new Score(18, 1,  athlete46));
+        handH.ajouterResultat(athlete46, new Score(18, 4,  athlete46));
         equipe1.ajouteAthlete(athlete46);
 
         Equipe equipe2 = new Equipe("Equipe Number TWO");
@@ -253,7 +253,11 @@ public class Executable {
         System.out.println(jO.getLesPays());
 
         /** Classement selon médailles des athlètes */
-        System.out.println(System.lineSeparator() + "Affichage classement selon médailles au JO : " + System.lineSeparator());
+        System.out.println(System.lineSeparator() + "Affichage classement selon médailles au JO : (classé dans l'ordre décroissant)" + System.lineSeparator());
+        List<Athlete> newListe = equipe1.getLesMembres();
+        System.out.println(newListe);
+        Collections.sort(newListe, new ComparatorMedaillesParticipant());
+        System.out.println(newListe);
 
 
         /** Classement selon résultat Athlètes */
